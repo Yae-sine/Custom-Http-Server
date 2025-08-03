@@ -45,7 +45,8 @@ public class ConfigurationManager {
         try {
             myCurrentConfiguration = Json.fromJson(conf , Configuration.class);
         } catch (JsonProcessingException e) {
-            throw new HttpConfigurationException("Error parsing the configuration file , internal" ,e);        }
+            throw new HttpConfigurationException("Error parsing the configuration file , internal" ,e);
+        }
     }
     public Configuration getCurrentConfiguration(){
         if (myCurrentConfiguration == null){

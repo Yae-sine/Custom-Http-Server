@@ -23,7 +23,7 @@ public class Json {
         return myObjectMapper.treeToValue(node, clazz);
     }
 
-    public static JsonNode  toJson(Object obj){
+    public static JsonNode toJson(Object obj){
         return myObjectMapper.valueToTree(obj);
     }
 
