@@ -1,0 +1,17 @@
+GET / HTTP/1.1
+Host: localhost:8080
+Connection: keep-alive
+Cache-Control: max-age=0
+sec-ch-ua: "Not)A;Brand";v="8", "Chromium";v="138", "Microsoft Edge";v="138"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 Edg/138.0.0.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: fr,fr-FR;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+Cookie: Idea-6d09dd1d=d93691b4-4772-49fd-81c6-511ded5f9c7f; Webstorm-e8579d63=f7906b9f-2a41-49f8-8f6c-dd6b1c65287d; csrftoken=hNRgSBhBWdV5L7dZoKa7JbHlsW9oqKif; __stripe_mid=2a802d14-3a87-48b7-80a0-e413444d929d4cf258; PHPSESSID=2tif5sm0cnc1cibhq7pupk14vh; __next_hmr_refresh_hash__=bc451d3b9b81cd1e50f8e19f680a3a5981b936c81ee581e0; JSESSIONID=1D01BFA49AC4375D77D6E3276965D864; rl_page_init_referrer=RudderEncrypt%3AU2FsdGVkX1%2FHbUspOglUK7rNaYB3CqotODVIeIbWZ00%3D; rl_page_init_referring_domain=RudderEncrypt%3AU2FsdGVkX1%2FDnpknav8I2MxpzFQ53Nxoias0yJ8uAnM%3D; rl_anonymous_id=RudderEncrypt%3AU2FsdGVkX1%2ByD%2FaxqKzrSqAFR0uN%2Bv3AkkcPODboStRI%2F9Z0Azj7OOJsr5z%2FC%2BmUQFccUSr7MGuDUqFLn5JR3Q%3D%3D; rl_user_id=RudderEncrypt%3AU2FsdGVkX1%2FLRsslTF%2FIu1jxLX0%2BMrSZPGbJ022LlbmurupY76Ap1moyPrLE3m1M3rOSG3CHyzDBcpjIj%2BOf524RsmZAqK7AzM%2FeOPvqqSP8LE420zD94FwNvOPa%2Fjv5JEOLf2Cobo4cEwT7%2BYPJWZg9lQxCh0UHmOxy8snfsfc%3D; rl_trait=RudderEncrypt%3AU2FsdGVkX19YPvX7nYluwmmhG4B3B8zYJsoEihs2crQD6sIWb9%2FRArqmCWLUQ2yfeT3rmwkvDay6p5Pl%2B4OqyV8RPVdtTwjw7WkN1MrSmkbfQPFWA4w84NZhlKKXbeb0OcMEfupLbjbGwgjLUzNwPg%3D%3D; rl_session=RudderEncrypt%3AU2FsdGVkX1%2Bvgs45UcbFmLSbl7HjFoRzItLYbYhIg8EmHJ6d0sBVNcwCyjTyAXuv42WULbhtewMTcsFIIlqg4cPD48LynetRukIm86dTpdjo3CviyvjLM8wDyJfXsPdsDfzgKg18gQ53BHKp%2B9Ml3w%3D%3D; ph_phc_4URIAm1uYfJO7j8kWSe0J8lc8IqnstRLS7Jx8NcakHo_posthog=%7B%22distinct_id%22%3A%227a21f050431062ec695865515e9e9a05f9ca37edc053a73a0ac4a10819ba1356%23d67fd53a-3655-4340-990f-358423d99c08%22%2C%22%24sesid%22%3A%5B1753020157733%2C%220198280d-53ee-7ba4-ac01-9d9d35cc7adf%22%2C1753018618862%5D%2C%22%24epp%22%3Atrue%2C%22%24initial_person_info%22%3A%7B%22r%22%3A%22%24direct%22%2C%22u%22%3A%22http%3A%2F%2Flocalhost%3A5678%2Fsetup%22%7D%7D; Webstorm-e857a123=6190457b-8328-42e2-886b-fd697f7593b5

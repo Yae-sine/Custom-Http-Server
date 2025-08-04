@@ -28,7 +28,7 @@ public class HttpConnectionWorkerThread extends Thread{
 
 
             String html = "<html><head><title>This is a custom Http server</title></head><body><h1>This page is served using a custom http server</h1></body></html> ";
-            final String CRLF=  "\n\r";
+            final String CRLF=  "\r\n";
             String response =
                     "HTTP/1.1 200 OK" + CRLF +
                             "Content-Length: "+ html.getBytes().length + CRLF +
