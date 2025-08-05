@@ -24,8 +24,6 @@ public class HttpParser {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        parseHeaders(reader , httpRequest);
-        parseBody(reader , httpRequest);
         return httpRequest;
     }
 
@@ -72,12 +70,6 @@ public class HttpParser {
 
             }
         }
-    }
-
-    private void parseHeaders(InputStreamReader reader, HttpRequest httpRequest) {
-    }
-
-    private void parseBody(InputStreamReader reader, HttpRequest httpRequest) {
     }
 
 
