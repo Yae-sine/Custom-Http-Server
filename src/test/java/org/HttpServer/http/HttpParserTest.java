@@ -8,6 +8,9 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
+
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class HttpParserTest {
@@ -19,11 +22,56 @@ class HttpParserTest {
     }
 
     @Test
-    void parseHttpParser() {
-        httpParser.parseHttpParser(generateValidTestCase());
+    void parseHttpParser(){
+        try{
+            HttpRequest request = httpParser.parseHttpParser(generateGetValidTestCase());
+            assertEquals(HttpMethod.GET, request.getMethod());
+        }
+        catch (HttpParsingException e){
+            assertEquals(HttpStatusCodes.CLIENT_ERROR_400_BAD_REQUEST, e.getErrorCode());
+        }
+
+
     }
 
-    private InputStream generateValidTestCase(){
+
+    @Test
+    void parseHttpBadParser() throws HttpParsingException {
+        try{
+            HttpRequest request = httpParser.parseHttpParser(generateGetBadTestCase());
+            fail();
+        }
+        catch(HttpParsingException e){
+            assertEquals(HttpStatusCodes.CLIENT_ERROR_400_BAD_REQUEST, e.getErrorCode());
+        }
+
+    }
+
+
+    @Test
+    void parseHttpBadParser2() throws HttpParsingException {
+        try{
+            HttpRequest request = httpParser.parseHttpParser(generateGetBadTestCase2());
+            fail();
+        }
+        catch(HttpParsingException e){
+            assertEquals(HttpStatusCodes.SERVER_ERROR_501_NOT_IMPLEMENTED, e.getErrorCode());
+        }
+    }
+
+    @Test
+    void parseHttpBadParser3() throws HttpParsingException {
+        try{
+            HttpRequest request = httpParser.parseHttpParser(generateGetBadTestCase3());
+            fail();
+        }
+        catch(HttpParsingException e){
+            assertEquals(HttpStatusCodes.CLIENT_ERROR_400_BAD_REQUEST, e.getErrorCode());
+        }
+    }
+
+
+    private InputStream generateGetValidTestCase(){
         String rawData= "GET / HTTP/1.1\r\n" +
                 "Host: localhost:8080\r\n" +
                 "Connection: keep-alive\r\n" +
@@ -44,6 +92,52 @@ class HttpParserTest {
         InputStream inputStream = new ByteArrayInputStream(
                 rawData.getBytes(StandardCharsets.US_ASCII)
         );
+
+
         return inputStream;
     }
+
+    private InputStream generateGetBadTestCase(){
+        String rawData= "GET / HTTP/1.1\r\n" +
+                "Host: localhost:8080\r\n" +
+                "Connection: keep-alive\r\n" +
+                "Cache-Control: max-age=0\r\n" +
+                "Sec-Fetch-Dest: document\r\n" +
+                "Accept-Encoding: gzip, deflate, br, zstd\r\n" +
+                "Accept-Language: fr,fr-FR;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6\r\n"+
+                "\r\n";
+        InputStream inputStream = new ByteArrayInputStream(
+                rawData.getBytes(StandardCharsets.US_ASCII)
+        );
+        return inputStream;}
+
+    private InputStream generateGetBadTestCase2() {
+        String rawData= "GEEET / HTTP/1.1\r\n" +
+                "Host: localhost:8080\r\n" +
+                "Connection: keep-alive\r\n" +
+                "Cache-Control: max-age=0\r\n" +
+                "Sec-Fetch-Dest: document\r\n" +
+                "Accept-Encoding: gzip, deflate, br, zstd\r\n" +
+                "Accept-Language: fr,fr-FR;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6\r\n"+
+                "\r\n";
+        InputStream inputStream = new ByteArrayInputStream(
+                rawData.getBytes(StandardCharsets.US_ASCII)
+        );
+        return inputStream;}
+
+
+    private InputStream generateGetBadTestCase3() {
+        String rawData= "GET / AAAAA HTTP/1.1\r\n" +
+                "Host: localhost:8080\r\n" +
+                "Connection: keep-alive\r\n" +
+                "Cache-Control: max-age=0\r\n" +
+                "Sec-Fetch-Dest: document\r\n" +
+                "Accept-Encoding: gzip, deflate, br, zstd\r\n" +
+                "Accept-Language: fr,fr-FR;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6\r\n"+
+                "\r\n";
+        InputStream inputStream = new ByteArrayInputStream(
+                rawData.getBytes(StandardCharsets.US_ASCII)
+        );
+        return inputStream;}
+
 }
